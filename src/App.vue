@@ -1,21 +1,23 @@
 <!-- 寫js用的地方 -->
 <script>
-// import { RouterView } from 'vue-router'
+import {RouterLink,RouterView } from 'vue-router'
 
 export default {
   data() {
     return {
       count: 0,
     }
-  }
-  // // 元件宣告
-  // components: {
-  //   RouterView
-  // },
+  },
+  // 元件宣告
+  components: {
+    RouterLink,
+    RouterView
+  },
 }
 </script>
 
 <template>
+  <!-- 觀察設計稿，將共同的部分放在此頁 -->
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
@@ -26,6 +28,9 @@ export default {
 
 
   <header>
+    <!-- <a href="/">home</a>
+    <a href="/about">about</a>
+    <a href="/calc">calc</a> -->
     <!-- 頁首 -->
   </header>
 

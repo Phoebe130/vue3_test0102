@@ -35,6 +35,7 @@ export default {
   </header>
 
   <main>
+    <div class="calc text-[30px]">我來自公版</div>
     <!-- {{ count }}
     <div>
       <button type="button" @click="count++">++</button>

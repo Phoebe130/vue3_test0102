@@ -8,7 +8,7 @@ export default {
             numA: 0,
             numB: 0,
             result: 0,
-            html:`
+            html: `
             <div>
                 我是html
             </div>
@@ -19,7 +19,7 @@ export default {
     methods: {
         add() {
             // 先判斷numA numB不為空
-            if (this.numA.toString().trim === '' || this.numB.toString().trim === '' ) return;
+            if (this.numA.toString().trim === '' || this.numB.toString().trim === '') return;
             this.result = this.numA + this.numB;
         },
     },
@@ -32,7 +32,7 @@ export default {
     <!-- v-else -->
 
     <!-- v-show -->
-    
+
     <!-- v-for 記得要補key  -->
     <!-- v-bind 省略的寫法「：」 -->
     <!-- v-model 資料input與變數產生連結 -->
@@ -45,11 +45,11 @@ export default {
     <div>
         <label>
             數字A:
-            <input type="number" v-model="numA">
+            <input type="number" v-model="numA" class="inputStyle">
         </label>
         <label>
             數字B:
-            <input type="number" v-model="numB">
+            <input type="number" v-model="numB" class="inputStyle">
         </label>
     </div>
 
@@ -60,9 +60,12 @@ export default {
         <button class="btn">/</button>
     </div>
 
-    <div class="output">
+    <div class="output" text-main-deep>
         輸出結果：{{ result }}
     </div>
+
+    <div class="box">    </div>
+
 </template>
 
 <!-- 目的是不要影響到其他區塊 -->
@@ -71,15 +74,22 @@ export default {
     //font-size: 42px;
 }
 
+.inputStyle {
+    @apply border border-gray-500 border-[1px];
+}
+
 .btns {
-    display: flex;
-    margin: 20px;
+    @apply flex gap-[30px] m-[20px];
+
     justify-content: center;
-    gap: 30px;
 
     .btn {
+        @apply border border-[2px] hover:text-[white] bg-main-deep;
         padding: 5px 15px;
     }
-
+}
+.box{
+    @apply  flex justify-center w-[300px] h-[300px] bg-[pink] sm:w-[100px] sm:h-[100px];
+ 
 }
 </style>

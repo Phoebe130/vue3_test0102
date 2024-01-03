@@ -19,10 +19,10 @@ export default {
 <template>
   <!-- 觀察設計稿，將共同的部分放在此頁 -->
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <br>
-    <router-link to="/calc">calc</router-link>
+    <router-link to="/" class="nav-link">Home</router-link>|
+    <router-link to="/about" class="nav-link">About</router-link>|
+    <router-link to="/calc" class="nav-link">Calc</router-link>|
+    <router-link to="/todolist" class="nav-link">Todolist</router-link>
   </nav>
   <!-- <router-view /> -->
 
@@ -35,7 +35,8 @@ export default {
   </header>
 
   <main>
-    <div class="calc text-[30px]">我來自公版</div>
+    <!-- <div class="calc text-[30px]">我來自公版</div> -->
+
     <!-- {{ count }}
     <div>
       <button type="button" @click="count++">++</button>
@@ -68,4 +69,19 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+nav a.nav-link {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-right: 8px; /* 調整右邊間距，使得分隔符號與連結之間有適當的間距 */
+}
+
+nav a.nav-link:last-child {
+  margin-right: 0; /* 最後一個連結不需要右邊間距 */
+}
+
+nav a.nav-link.router-link-exact-active {
+  color: #42b983;
+}
+
 </style>

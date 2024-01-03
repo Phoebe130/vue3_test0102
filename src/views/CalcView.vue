@@ -1,7 +1,10 @@
 <script>
-
+import MyButton from '@/components/customButton/MyButton.vue';
 // import { toHandlers } from 'vue';
 export default {
+    components:{
+        MyButton,
+    },
     // 放置所有變數的位置
     data() {
         return {
@@ -54,10 +57,17 @@ export default {
     </div>
 
     <div class="btns">
-        <button class="btn" type="button" @click="add()">+</button>
+        <MyButton @click="add()">
+            <template #placeA>+</template>
+            <template #placeB>我是另一個slot開孔</template>
+        </MyButton>
+        <MyButton @click="add()">-</MyButton>
+        <MyButton @click="add()">x</MyButton>
+        <MyButton @click="add()">/</MyButton>
+        <!-- <button class="btn" type="button" @click="add()">+</button> 
         <button class="btn">-</button>
         <button class="btn">x</button>
-        <button class="btn">/</button>
+        <button class="btn">/</button> -->
     </div>
 
     <div class="output" text-main-deep>
